@@ -1,0 +1,571 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Every Black Mirror episode, scored against the news</title>
+<meta name="description" content="All 34 Black Mirror episodes plotted by how close the real world has come to each scenario, 2011 to 2026.">
+
+<!-- ▼▼ EDIT THESE FIVE LINES AFTER YOU DEPLOY ▼▼ -->
+<meta property="og:url" content="https://YOUR-SITE-URL/">
+<meta property="og:image" content="https://YOUR-SITE-URL/og.jpg">
+<meta name="twitter:creator" content="@manasbihani">
+<meta property="article:author" content="https://manasbihani.substack.com">
+<link rel="canonical" href="https://YOUR-SITE-URL/">
+<!-- ▲▲ everything below is already set ▲▲ -->
+
+<meta property="og:type" content="article">
+<meta property="og:title" content="Every Black Mirror episode, scored against the news">
+<meta property="og:description" content="34 episodes plotted by how far each scenario has travelled from speculation to the ordinary. Median: 62 out of 100.">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:type" content="image/jpeg">
+<meta property="og:image:alt" content="Every Black Mirror episode, scored against the news. Chart of 34 episodes from 2011 to 2026, median 62 out of 100.">
+<meta property="og:site_name" content="Manas">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600;700&family=Newsreader:ital,opsz,wght@0,6..72,300;0,6..72,400;1,6..72,400&display=swap" rel="stylesheet">
+<style>
+:root{
+  --paper:#1C1D21;
+  --paper-2:#2A2C31;
+  --ink:#F4F2EB;
+  --mute:#B6B7B0;
+  --rule:#4E5056;
+  --dormant:#9AA094;
+  --cold:#8EBBD0;
+  --amber:#E0B056;
+  --rust:#FF6B4A;
+  --maxw:1120px;
+}
+*{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%;color-scheme:dark}
+body{
+  margin:0;background:var(--paper);color:var(--ink);
+  font-family:"Newsreader",Georgia,"Times New Roman",serif;
+  font-size:17px;line-height:1.55;
+  -webkit-font-smoothing:antialiased;
+}
+::selection{background:var(--rust);color:#fff}
+h1,h2,h3,.ui{font-family:"Archivo","Helvetica Neue",Arial,sans-serif}
+.wrap{max-width:var(--maxw);margin:0 auto;padding:0 24px}
+
+/* ---------- masthead ---------- */
+header{padding:56px 0 0}
+.kicker{font-family:"Archivo",sans-serif;font-size:13px;letter-spacing:.02em;color:var(--mute);margin:0 0 18px}
+h1{
+  font-size:clamp(32px,6.2vw,64px);line-height:.97;font-weight:700;
+  letter-spacing:-.032em;margin:0 0 20px;max-width:15ch;
+}
+.deck{font-size:19px;line-height:1.5;max-width:62ch;color:var(--ink);margin:0 0 8px}
+.deck em{font-style:italic}
+.byline{font-family:"Archivo",sans-serif;font-size:14px;color:var(--mute);margin:16px 0 0}
+.byline b{font-weight:600;color:var(--ink)}
+.byline a{color:var(--rust);text-decoration:none;border-bottom:1px solid rgba(224,84,56,.4)}
+.byline a:hover{border-bottom-color:var(--rust)}
+
+/* ---------- chart ---------- */
+.chartblock{margin:38px 0 0;border-top:1px solid var(--rule);padding-top:22px}
+.chart-head{display:flex;flex-wrap:wrap;gap:16px;align-items:baseline;justify-content:space-between;margin-bottom:14px}
+.chart-note{font-size:14.5px;color:var(--mute);max-width:46ch;margin:0}
+figure{margin:0}
+.sr{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
+svg{display:block;width:100%;height:auto;overflow:visible;touch-action:pan-y}
+.axis-line{stroke:var(--rule);stroke-width:1}
+.grid{stroke:var(--rule);stroke-width:1;stroke-dasharray:1 4}
+.axis-text{font-family:"Archivo",sans-serif;font-size:11.5px;fill:#C5C6C0}
+.band-text{font-family:"Archivo",sans-serif;font-size:11px;fill:#C5C6C0}
+.trace{fill:none;stroke:#8A8C86;stroke-width:1.25;opacity:.75;cursor:pointer;transition:opacity .15s,stroke-width .15s}
+.trace.dim{opacity:.22}
+.trace.on{stroke-width:2.6;opacity:1}
+.dot{opacity:0;transition:opacity .15s}
+.dot.on{opacity:1}
+.endlabel{font-family:"Archivo",sans-serif;font-size:12px;font-weight:600;paint-order:stroke;stroke:var(--paper);stroke-width:4px;stroke-linejoin:round}
+
+/* ---------- legend / controls ---------- */
+.scale{display:flex;flex-wrap:wrap;gap:0;margin:20px 0 0;border:1px solid var(--rule);border-radius:2px;overflow:hidden}
+.scale div{flex:1 1 140px;padding:9px 12px;font-family:"Archivo",sans-serif;font-size:12.5px;line-height:1.3;border-right:1px solid var(--rule);color:var(--ink)}
+.scale div:last-child{border-right:0}
+.scale b{display:block;font-weight:600;font-size:12.5px}
+.scale span{color:var(--mute);font-size:11.5px}
+.swatch{display:inline-block;width:9px;height:9px;border-radius:50%;margin-right:6px;vertical-align:1px}
+
+.controls{display:flex;flex-wrap:wrap;gap:10px;align-items:center;margin:34px 0 4px;padding-top:22px;border-top:1px solid var(--rule)}
+.controls .grp{display:flex;gap:6px;flex-wrap:wrap;align-items:center}
+.lbl{font-family:"Archivo",sans-serif;font-size:12.5px;color:var(--mute);margin-right:2px}
+button.chip{
+  font-family:"Archivo",sans-serif;font-size:13px;font-weight:500;
+  background:transparent;border:1px solid var(--rule);color:var(--ink);
+  padding:5px 11px;border-radius:2px;cursor:pointer;transition:.12s;
+}
+button.chip:hover{border-color:#8A8C86}
+button.chip[aria-pressed="true"]{background:var(--ink);border-color:var(--ink);color:var(--paper)}
+button.chip:focus-visible,input:focus-visible,.row:focus-visible{outline:2px solid var(--rust);outline-offset:2px}
+input[type=search]{
+  font-family:"Archivo",sans-serif;font-size:13px;padding:6px 10px;
+  border:1px solid var(--rule);border-radius:2px;background:var(--paper-2);color:var(--ink);width:190px;
+}
+.count{font-family:"Archivo",sans-serif;font-size:12.5px;color:var(--mute);margin-left:auto}
+
+/* ---------- ledger ---------- */
+.ledger{margin:6px 0 0;border-top:1px solid var(--ink)}
+.row{border-bottom:1px solid var(--rule);cursor:pointer;display:block;width:100%;text-align:left;background:none;border-left:0;border-right:0;border-top:0;padding:0;font:inherit;color:inherit}
+.row:hover{background:var(--paper-2)}
+.row.open{background:var(--paper-2)}
+.rowin{display:grid;grid-template-columns:78px minmax(0,1fr) 250px;gap:18px;align-items:center;padding:13px 6px}
+.slug{font-family:"Archivo",sans-serif;font-size:12px;font-weight:600;color:var(--mute);letter-spacing:.01em;white-space:nowrap}
+.ttl{font-family:"Archivo",sans-serif;font-size:16.5px;font-weight:600;letter-spacing:-.012em;margin:0 0 2px}
+.prem{font-size:15px;color:#D4D3CC;margin:0;line-height:1.4}
+.meter{display:flex;align-items:center;gap:11px}
+.track{position:relative;flex:1;height:7px;background:#3A3C42;border-radius:1px;overflow:hidden}
+.fill{position:absolute;left:0;top:0;bottom:0;width:0;transition:width .9s cubic-bezier(.2,.7,.3,1)}
+.ghost{position:absolute;top:0;bottom:0;width:2px;background:rgba(236,234,228,.35)}
+.num{font-family:"Archivo",sans-serif;font-size:18px;font-weight:600;font-variant-numeric:tabular-nums;min-width:30px;text-align:right;letter-spacing:-.02em}
+.detail{display:none;padding:2px 6px 26px;grid-template-columns:78px minmax(0,1fr);gap:18px}
+.row.open + .detail{display:grid}
+.detail .body{max-width:70ch}
+.detail h4{font-family:"Archivo",sans-serif;font-size:12.5px;font-weight:600;color:var(--mute);margin:0 0 10px}
+ol.miles{list-style:none;margin:0 0 16px;padding:0;border-left:1px solid var(--rule)}
+ol.miles li{display:grid;grid-template-columns:52px 1fr;gap:14px;padding:0 0 11px 16px;font-size:15.5px;line-height:1.45}
+ol.miles .yr{font-family:"Archivo",sans-serif;font-size:13px;font-weight:600;font-variant-numeric:tabular-nums;color:var(--ink);padding-top:2px}
+.miles a{
+  color:var(--rust);text-decoration:none;white-space:nowrap;
+  border-bottom:1px solid rgba(224,84,56,.4);
+  font-family:"Archivo",sans-serif;font-size:12px;font-weight:600;
+}
+.miles a:hover{border-bottom-color:var(--rust)}
+.verdict{font-size:15.5px;line-height:1.5;color:var(--ink);border-top:1px solid var(--rule);padding-top:11px;margin:0}
+.verdict b{font-family:"Archivo",sans-serif;font-size:12.5px;font-weight:600;color:var(--mute);display:block;margin-bottom:3px}
+
+/* ---------- method ---------- */
+footer{margin:64px 0 80px;border-top:1px solid var(--ink);padding-top:24px}
+footer h2{font-size:19px;font-weight:600;letter-spacing:-.015em;margin:0 0 12px}
+footer p{font-size:15.5px;color:var(--ink);max-width:70ch;margin:0 0 12px}
+footer a{color:var(--rust)}
+.fine{font-size:13.5px;color:var(--mute)}
+
+@media (max-width:820px){
+  .rowin{grid-template-columns:64px minmax(0,1fr);gap:12px;padding:12px 4px}
+  .meter{grid-column:1/-1;margin-top:4px}
+  .detail{grid-template-columns:1fr}
+  .detail .body{padding-left:0}
+  h1{max-width:none}
+  .endlabel{display:none}
+}
+@media (prefers-reduced-motion:reduce){
+  *{transition:none!important;animation:none!important}
+}
+</style>
+</head>
+<body>
+
+<div class="wrap">
+
+<header>
+  <p class="kicker">34 episodes · 2011–2026 · scored September 2026</p>
+  <h1>Every Black Mirror episode, scored against the news</h1>
+  <p class="deck">Charlie Brooker keeps saying the show is a warning, and the world keeps reading it as a roadmap. This tracks all seven series against what actually shipped: how far each scenario has travelled from speculation toward the ordinary. Every line starts at the episode's release and ends at today.</p>
+  <p class="byline">By <b>Manas</b> · <a href="https://manasbihani.substack.com">Read more of my writing</a> · <a href="https://x.com/manasbihani">@manasbihani</a></p>
+</header>
+
+<section class="chartblock">
+  <div class="chart-head">
+    <p class="chart-note">Each thread is one episode, tinted by where it ends up. Tap a thread, or any row below, to follow it.</p>
+    <div class="grp" id="seasonchips"></div>
+  </div>
+  <figure>
+    <svg id="chart" viewBox="0 0 1000 440" role="group" aria-label="Line chart showing how close each Black Mirror episode's scenario has come to reality between 2011 and 2026"></svg>
+    <p class="sr" id="live" aria-live="polite"></p>
+  </figure>
+  <div class="scale">
+    <div><b><span class="swatch" style="background:#9AA094"></span>0–24 Still fiction</b><span>No working mechanism exists</span></div>
+    <div><b><span class="swatch" style="background:#8EBBD0"></span>25–44 Early signals</b><span>Labs, patents, prototypes</span></div>
+    <div><b><span class="swatch" style="background:#E0B056"></span>45–64 Partly here</b><span>Shipping, but not yet normal</span></div>
+    <div><b><span class="swatch" style="background:#FF6B4A"></span>65–84 Substantially here</b><span>Widely used, minus the extremes</span></div>
+    <div><b><span class="swatch" style="background:#F4F2EB"></span>85–100 Arrived</b><span>The episode reads as reportage</span></div>
+  </div>
+</section>
+
+<section class="controls">
+  <span class="lbl">Sort</span>
+  <div class="grp" id="sortchips">
+    <button class="chip" data-sort="score" aria-pressed="true">Closest to real</button>
+    <button class="chip" data-sort="air" aria-pressed="false">Release order</button>
+    <button class="chip" data-sort="climb" aria-pressed="false">Moving fastest now</button>
+  </div>
+  <input type="search" id="q" placeholder="Search episodes" aria-label="Search episodes">
+  <span class="count" id="count"></span>
+</section>
+
+<div class="ledger" id="ledger"></div>
+
+<footer>
+  <h2>How this is scored</h2>
+  <p>The numbers are judgment, not measurement. Each episode gets a 0–100 reading of how much of its core mechanism now exists in the world, weighted toward deployment rather than demos: a lab result moves a line a little, a product people actually buy moves it a lot, a government procurement moves it more. Trajectories are anchored to dated real-world events, listed under each episode, and interpolated between them. Two people doing this honestly would disagree by ten or fifteen points on most rows.</p>
+  <p>Scores deliberately track the <em>mechanism</em>, not the plot. "Mazey Day" is graded on celebrity surveillance and not on werewolves. "Demon 79" is in here as a control: it has no technology in it at all, so its line should stay flat, and it does.</p>
+  <p class="fine">Counted as 34 titles: 33 episodes plus <em>Bandersnatch</em>, with the 2014 special included in the episode count. Episode list and air dates from Wikipedia and TVmaze. Each dated anchor below an episode links to the reporting it rests on. Season 8 was confirmed by Netflix in January 2026; Brooker's line was that the show would return "just in time for reality to catch up with it."</p>
+  <p class="fine">Built by Manas, September 2026. Free to share, quote and argue with — a link back is appreciated. If you think a score is wrong, it probably is: <a href="https://manasbihani.substack.com">tell me why</a>.</p>
+</footer>
+
+</div>
+
+<script>
+const DATA=[
+{s:1,e:1,t:"The National Anthem",air:2011,prem:"A kidnapper's ransom is a live-broadcast humiliation, and the public's appetite decides the outcome.",
+ pts:[[2011,12],[2014,34],[2017,46],[2020,54],[2023,60],[2026,66]],
+ m:[[2015,"A biography alleges an initiation-ritual story about the sitting UK Prime Minister; Brooker said he briefly wondered whether reality was a simulation.","https://www.theguardian.com/tv-and-radio/shortcuts/2015/sep/21/pigs-prime-minister-black-mirror-ashcroft-allegation-charlie-brooker","The Guardian"],[2017,"Ransomware shifts from stealing data to hostage-taking public institutions, with a countdown clock and an audience.","https://www.bbc.com/news/health-39899646","BBC"],[2024,"Deepfaked hostage and extortion videos make the demand cheap to manufacture and hard to disprove.","https://www.axios.com/2025/12/05/ai-videos-photos-scam-virtual-fbi-victim-ransom-kidnapping","Axios"]],
+ v:"The pig is not the point. The mechanism — a demand routed through the public so a leader has no private way to refuse — is now routine crisis management."},
+
+{s:1,e:2,t:"Fifteen Million Merits",air:2011,prem:"You pedal for credits, spend credits to skip the ads, and the only exit is a talent show that absorbs your dissent.",
+ pts:[[2011,15],[2014,35],[2017,55],[2020,68],[2023,76],[2026,84]],
+ m:[[2015,"Ad-free tiers arrive as a paid product: paying not to be advertised at becomes a normal line item.","https://www.theverge.com/2015/10/21/9567011/youtube-red-ad-free-subscription-service-announced","The Verge"],[2019,"Gig platforms gamify labour with streaks, tiers, quests and rating floors.","https://www.theatlantic.com/technology/archive/2019/02/uber-drivers-game-app/582355/","The Atlantic"],[2022,"Netflix and Prime Video invert the model — the ads come back and the ad-free version becomes the upsell.","https://www.theverge.com/2022/11/3/23438042/netflix-ad-supported-tier-launch-date-price","The Verge"],[2025,"Ad-free tiers take repeated price rises while the ad-supported tiers grow fastest; paying not to be sold to becomes the premium product.","https://www.theverge.com/2025/1/21/24348763/netflix-standard-with-ads-most-popular-plan","The Verge"]],
+ v:"The most quietly accurate episode in the run. Everything in it exists except the bicycles — and when Season 7 extended the same joke to a brain, nobody found the premise implausible."},
+
+{s:1,e:3,t:"The Entire History of You",air:2011,prem:"A grain behind the ear records everything you see, so no conversation is ever finished.",
+ pts:[[2011,8],[2014,18],[2017,28],[2020,36],[2023,52],[2026,68]],
+ m:[[2013,"Google Glass ships to developers and collapses under social backlash, not technical failure.","https://www.theatlantic.com/technology/archive/2013/05/google-glass-is-already-facing-a-backlash/276269/","The Atlantic"],[2023,"Always-on wearables return as AI pendants and camera glasses that log the day for later recall.","https://www.theverge.com/2023/10/4/23899904/meta-ray-ban-smart-glasses-hands-on","The Verge"],[2024,"Microsoft announces Recall, a rolling screenshot memory of everything you did on your PC.","https://www.theverge.com/2024/5/20/24158386/microsoft-copilot-plus-recall-ai-explainer","The Verge"],[2026,"Meta is reported to be weighing a hardware kill switch for its glasses after sustained backlash over covert recording.","https://www.digitaltrends.com/wearables/meta-patent-shows-a-hardware-kill-switch-for-its-camera-glasses-it-cant-come-sooner/","Digital Trends"]],
+ v:"No implant, but the function arrived by another route. The fight over it now is exactly the fight the episode staged: not whether the record exists, but who gets to replay it."},
+
+{s:2,e:1,t:"Be Right Back",air:2013,prem:"A widow rebuilds her husband from his messages, then from his voice, then buys the body.",
+ pts:[[2013,10],[2015,16],[2017,24],[2020,38],[2023,60],[2026,80]],
+ m:[[2016,"A founder builds a chatbot from her dead friend's messages; the experiment becomes Replika.","https://www.theverge.com/a/luka-artificial-intelligence-memorial-roman-mazurenko-bot","The Verge"],[2020,"Microsoft is granted a patent for building a conversational bot of a specific person, explicitly including the deceased.","https://www.cnn.com/2021/01/27/tech/microsoft-chat-bot-patent/index.html","CNN"],[2022,"Amazon demos an Alexa feature that speaks in a dead relative's voice from under a minute of audio.","https://www.theverge.com/2022/6/23/23179748/amazon-alexa-feature-mimic-voice-dead-relative-ai","The Verge"],[2026,"A full digital-afterlife industry — subscription avatars at $20–25 a month, premium recreations far higher — with writers noting a new category of death: when the payment stops.","https://www.nature.com/articles/d41586-024-03145-x","Nature"]],
+ v:"Only the android body is missing, and the episode's real argument was never about the body. Researchers now report the same finding the episode did: people prefer the version that speaks as the dead person, and it costs them something to hear it."},
+
+{s:2,e:2,t:"White Bear",air:2013,prem:"A woman is hunted through a park by crowds who film her and never intervene.",
+ pts:[[2013,20],[2015,32],[2017,48],[2020,62],[2023,70],[2026,74]],
+ m:[[2014,"Single-tweet reputational executions become a recognised genre, with the pile-on watched in real time as sport.","https://www.nytimes.com/2015/02/15/magazine/how-one-stupid-tweet-ruined-justine-saccos-life.html","The New York Times"],[2019,"Bystander filming of fights, arrests and mental-health crises becomes a stable content category.","https://www.theatlantic.com/magazine/archive/2018/12/the-tragedy-of-bystander-video/573937/","The Atlantic"],[2024,"Punishment-as-entertainment formats — vigilante stings, ambush confrontations — professionalise on short-form video.","https://www.wired.com/story/tiktok-predator-poachers-to-catch-a-predator/","WIRED"]],
+ v:"The theme park is a formality. The audience behaviour it satirises is now the default response to someone else's worst day."},
+
+{s:2,e:3,t:"The Waldo Moment",air:2013,prem:"A crude cartoon runs for office because being unserious is a competitive advantage.",
+ pts:[[2013,12],[2015,22],[2017,58],[2020,66],[2023,70],[2026,78]],
+ m:[[2016,"A campaign wins on the exact proposition the episode floated — that contempt for the process is the platform.","https://www.theguardian.com/tv-and-radio/2016/oct/16/charlie-brooker-black-mirror-waldo-trump-clinton","The Guardian"],[2019,"Novelty candidates on UK ballots stop reading as protest and start reading as normal.","https://www.bbc.com/news/uk-politics-49616423","BBC"],[2025,"Synthetic avatars and cloned candidate voices enter live campaigns; the character no longer needs a performer behind it.","https://www.npr.org/2024/02/08/1229137463/ai-deepfake-election-risks","NPR"]],
+ v:"Brooker has said this is the episode he likes least and the one that aged fastest. Waldo now looks less like satire than like an early, underpowered prototype."},
+
+{s:2,e:0,t:"White Christmas",air:2014,prem:"Digital copies of people are tortured into servitude, and blocking someone erases them from your sight.",
+ pts:[[2014,10],[2017,18],[2020,26],[2023,38],[2026,50]],
+ m:[[2023,"Personal AI assistants trained on your own data ship as products; the word 'clone' is used in marketing without irony.","https://www.theverge.com/2023/11/6/23948784/rabbit-r1-ai-hardware-assistant-teardown-ces","The Verge"],[2025,"Agentic systems run errands, calls and calendars as you, at speeds that make their subjective time argument uncomfortable.","https://www.theverge.com/2025/1/23/24350075/openai-operator-agent-computer-use","The Verge"],[2026,"Model-welfare debates move from philosophy departments into frontier-lab policy documents.","https://www.anthropic.com/research/model-welfare","Anthropic"]],
+ v:"The z-eye blocking is still fiction; the cookie is not, in a thin form. What the episode got exactly right is the labour argument — that a copy of a person is valuable precisely because it can be coerced."},
+
+{s:3,e:1,t:"Nosedive",air:2016,prem:"A five-star rating on every human interaction determines where you can live, fly and work.",
+ pts:[[2016,26],[2017,38],[2020,56],[2023,64],[2026,72]],
+ m:[[2015,"Sesame/Zhima Credit scores citizens on purchases and behaviour, unlocking deposits waived or travel restricted.","https://www.wired.com/2017/10/chinas-social-credit-score-isnt-what-you-think-it-is/","WIRED"],[2016,"Rate-a-person apps ship in the West within weeks of the episode airing.","https://www.bbc.com/news/technology-35725862","BBC"],[2021,"Algorithmic deplatforming matures: ride-share, rental and payment bans arrive with no hearing and no appeal.","https://www.nytimes.com/2021/01/13/technology/parler-amazon-apple.html","The New York Times"],[2025,"Payment processors and marketplaces exercise de facto economic exclusion at a scale states envy.","https://www.theverge.com/2024/2/28/24085506/visa-mastercard-payment-processors-content-moderation","The Verge"]],
+ v:"There is still no single score. There are eleven of them, they don't talk to each other, and being low on any one of them removes a piece of ordinary life."},
+
+{s:3,e:2,t:"Playtest",air:2016,prem:"An augmented-reality game reads your fear directly and plays it back at you.",
+ pts:[[2016,14],[2017,18],[2020,24],[2023,30],[2026,36]],
+ m:[[2022,"An Oculus founder builds a headset designed to kill the wearer on in-game death, as a stunt about stakes.","https://www.theverge.com/2022/11/7/23443442/palmer-luckey-kill-headset-pax","The Verge"],[2024,"Mixed-reality headsets ship at consumer scale with room-mapped, body-tracked horror.","https://www.theverge.com/2024/2/2/24058482/apple-vision-pro-review-apple-headset","The Verge"],[2026,"Consumer neural interfaces remain read-only and coarse; nothing writes fear into a brain.","https://www.nature.com/articles/d41586-024-01287-y","Nature"]],
+ v:"The furthest behind of the VR episodes, because it needs a write channel into the nervous system and nobody has one."},
+
+{s:3,e:3,t:"Shut Up and Dance",air:2016,prem:"A hacked webcam turns a teenager into an obedient courier for people who were never going to let him go.",
+ pts:[[2016,52],[2017,62],[2020,74],[2023,84],[2026,90]],
+ m:[[2015,"Remote-access-trojan prosecutions establish webcam extortion as an industrial crime, not a prank.","https://www.wired.com/2013/09/miss-teen-usa-hacked/","WIRED"],[2019,"Mass sextortion email campaigns bluff at scale, and the bluff works often enough to be profitable.","https://krebsonsecurity.com/2018/07/sextortion-scam-uses-recipients-hacked-passwords/","Krebs"],[2023,"Law enforcement warns that generative tools let attackers fabricate the material outright — no hack required.","https://arstechnica.com/information-technology/2023/06/fbi-warns-of-increasing-use-of-ai-generated-deepfakes-in-sextortion-schemes/","Ars Technica"],[2026,"Sextortion becomes one of the most-reported crimes against minors in several jurisdictions.","https://www.fbi.gov/contact-us/field-offices/atlanta/news/sextortion-a-growing-threat-targeting-minors","FBI"]],
+ v:"Effectively arrived, and worse than written. The episode's threat required breaking into a laptop. The current version needs one public photo."},
+
+{s:3,e:4,t:"San Junipero",air:2016,prem:"The dying upload themselves into a permanent simulated town and choose to stay.",
+ pts:[[2016,6],[2017,8],[2020,10],[2023,14],[2026,20]],
+ m:[[2023,"Connectome mapping completes a fruit-fly brain; the scale gap to a human remains many orders of magnitude.","https://www.nature.com/articles/d41586-023-02724-0","Nature"],[2026,"Grief-tech avatars market themselves with San Junipero language while doing nothing of the kind.","https://www.theatlantic.com/family/archive/2024/05/ai-chatbots-grief/678412/","The Atlantic"]],
+ v:"The show's one genuinely hopeful ending is also its least likely. Continuity of consciousness has no working mechanism, no prototype, and no agreed test for whether it happened."},
+
+{s:3,e:5,t:"Men Against Fire",air:2016,prem:"An implant makes soldiers see the people they are killing as monsters.",
+ pts:[[2016,16],[2017,22],[2020,30],[2023,36],[2026,44]],
+ m:[[2021,"The US Army commits billions to fielded mixed-reality combat headsets that overlay the battlefield.","https://www.theverge.com/2021/3/31/22359966/microsoft-ivac-hud-army-contract-augmented-reality","The Verge"],[2023,"AI target-recommendation systems are reported in active conflicts, with human review compressed to seconds.","https://www.972mag.com/lavender-ai-israeli-army-gaza/","+972 Magazine"],[2026,"Drone operation puts a screen, a latency and a classifier between the decision and the person.","https://www.theguardian.com/world/2024/apr/03/ukraine-war-ai-assisted-drones-russia-combat","The Guardian"]],
+ v:"Nobody needs an implant. Dehumanisation by interface — a label, a box, a confidence score — turns out to be cheaper and to require no surgery."},
+
+{s:3,e:6,t:"Hated in the Nation",air:2016,prem:"Autonomous drone bees pollinate the country, and a hashtag decides who they kill.",
+ pts:[[2016,18],[2017,26],[2020,38],[2023,52],[2026,64]],
+ m:[[2020,"A UN panel reports a loitering munition may have attacked targets autonomously in Libya.","https://www.npr.org/2021/06/01/1002196245/a-u-n-report-suggests-libya-saw-the-first-battlefield-killing-by-an-autonomous-d","NPR"],[2023,"Cheap FPV drones become the defining weapon of a major land war, produced at consumer-electronics scale.","https://www.nytimes.com/2023/11/23/world/europe/ukraine-drones-russia-war.html","The New York Times"],[2025,"Swarm coordination moves from research demo to procurement line item.","https://www.defense.gov/News/News-Stories/Article/Article/3701557/replicator-initiative-aims-to-field-thousands-of-autonomous-systems-within-2-years/","US DoD"]],
+ v:"The swarm is real and the mob is real. What hasn't been built is the bridge between them — which is the only part anyone should be relieved about."},
+
+{s:4,e:1,t:"USS Callister",air:2017,prem:"A resentful engineer clones his colleagues into his private game and tortures them for obedience.",
+ pts:[[2017,10],[2020,16],[2023,24],[2026,32]],
+ m:[[2023,"Companion apps make persistent, abusable AI characters a mass-market product.","https://www.washingtonpost.com/technology/2023/03/30/replika-aiot-chatbot-investigations/","The Washington Post"],[2024,"Making a passable persona of a real coworker from public traces takes minutes and no permission.","https://www.nytimes.com/2024/05/01/technology/ai-personalities-chatbots.html","The New York Times"],[2026,"Debate over whether systems can be wronged moves into mainstream policy discussion.","https://www.anthropic.com/research/model-welfare","Anthropic"]],
+ v:"Cloning a mind is still fiction. Cloning enough of someone to build a puppet of them that other people find convincing is a weekend project."},
+
+{s:4,e:2,t:"Arkangel",air:2017,prem:"A mother installs a live feed of her daughter's eyes, with a filter that blurs anything upsetting.",
+ pts:[[2017,24],[2020,42],[2023,56],[2026,66]],
+ m:[[2019,"Family location apps normalise continuous child tracking, then continuous partner and adult-child tracking.","https://www.nytimes.com/2019/05/06/technology/life360-location-tracking.html","The New York Times"],[2021,"School-issued device monitoring reads students' messages and searches at scale, with automated alerting.","https://www.washingtonpost.com/technology/2022/08/11/gaggle-school-surveillance-students/","The Washington Post"],[2024,"Item trackers and kid smartwatches make the live dot on a map the default parenting posture.","https://www.theatlantic.com/technology/archive/2024/03/airtags-child-tracking-parenting/677684/","The Atlantic"]],
+ v:"Everything but the optic feed. And the episode's actual thesis — that the filter, not the tracker, is what damages the child — has barely entered the conversation."},
+
+{s:4,e:3,t:"Crocodile",air:2017,prem:"An insurance investigator extracts memories from witnesses, and one memory leads to a body count.",
+ pts:[[2017,10],[2020,16],[2023,28],[2026,36]],
+ m:[[2023,"Diffusion models reconstruct rough images and continuous language from fMRI scans of cooperating subjects.","https://www.nature.com/articles/s41593-023-01316-5","Nature"],[2025,"No jurisdiction admits neural reconstruction as evidence; the technique requires consent, a scanner and hours.","https://www.scientificamerican.com/article/mind-reading-ai-can-translate-brain-activity-into-words/","Scientific American"]],
+ v:"The neural part is far off. The investigative part isn't: phones, doorbells, cars and watches already assemble the recall the episode needed a device for."},
+
+{s:4,e:4,t:"Hang the DJ",air:2017,prem:"A dating system runs a thousand simulated relationships to tell you whether to bother with the real one.",
+ pts:[[2017,18],[2020,28],[2023,40],[2026,56]],
+ m:[[2024,"A major dating-app executive floats AI concierges that date each other on users' behalf, and is only half joking.","https://www.theguardian.com/technology/2024/jan/19/dating-app-ceo-ai-dates-match-group","The Guardian"],[2025,"Agentic dating tools screen, open and sustain conversations before either human is involved.","https://www.theverge.com/2025/2/11/24365012/tinder-hinge-ai-wingman-dating","The Verge"],[2026,"Expiry-dated and rationed matching becomes a standard retention mechanic.","https://www.theatlantic.com/technology/archive/2024/09/hinge-we-met-dating-apps/679847/","The Atlantic"]],
+ v:"Climbing faster than any other season-four episode. The simulation layer is being built for the platform's benefit, not the user's, which is the one detail the episode was too kind to include."},
+
+{s:4,e:5,t:"Metalhead",air:2017,prem:"Solar-powered robot dogs hunt the last people across an empty country.",
+ pts:[[2017,16],[2020,32],[2023,44],[2026,64]],
+ m:[[2016,"Dallas police use a bomb-disposal robot to kill a suspect — the first lethal police robot deployment in the US.","https://www.theguardian.com/technology/2016/jul/08/robot-bomb-dallas-police-shooting","The Guardian"],[2021,"NYPD cancels its Spot contract after public backlash; the machine works, the politics don't.","https://www.theverge.com/2021/4/29/22409559/nypd-robot-dog-digidog-boston-dynamics-contract-terminated","The Verge"],[2023,"A robotics firm demonstrates an armed quadruped, and the manufacturer of the best-known model publicly forbids weaponisation.","https://www.theverge.com/2021/10/25/22738137/ghost-robotics-dog-weapon-sword-international-association-chiefs-police","The Verge"],[2026,"US immigration enforcement posts plans to buy up to $2m of Boston Dynamics quadrupeds, uncompeted, for enforcement operations; robot dogs also work World Cup security.","https://www.wbur.org/news/2026/08/31/ice-robot-dogs-immigration-enforcement-boston-dynamics","WBUR"]],
+ v:"The fastest-moving line on this chart. Sixteen months ago this was a hardware curiosity; it is now a procurement document with a delivery date."},
+
+{s:4,e:6,t:"Black Museum",air:2017,prem:"A museum of atrocity exhibits, including a man's consciousness trapped in a souvenir for tourists to electrocute.",
+ pts:[[2017,12],[2020,18],[2023,26],[2026,34]],
+ m:[[2024,"Implanted brain-computer interfaces restore cursor control and speech to paralysed patients in human trials.","https://www.nature.com/articles/d41586-024-00753-x","Nature"],[2026,"Read-out improves steadily; there is still no mechanism for transferring sensation or a self into a substrate.","https://www.nytimes.com/2024/01/29/health/neuralink-implant-brain.html","The New York Times"]],
+ v:"The medical half is real and genuinely good. The episode's premise — that suffering could be packaged, sold and repeated forever — needs a technology nobody is close to."},
+
+{s:0,e:0,t:"Bandersnatch",air:2018,prem:"A programmer discovers his choices are being made by someone watching, and the viewer is the someone.",
+ pts:[[2018,26],[2020,36],[2023,48],[2026,58]],
+ m:[[2019,"Interactive streaming ships and then quietly recedes; the format was never the interesting part.","https://www.theverge.com/2019/3/19/18271400/netflix-interactive-shows-bandersnatch-black-mirror-el-camine-unbreakable-kimmy-schmidt","The Verge"],[2022,"Recommendation systems are widely understood to shape preference rather than serve it.","https://www.theatlantic.com/technology/archive/2022/04/tiktok-recommendation-algorithm-mental-health/629557/","The Atlantic"],[2026,"Agentic assistants begin making low-stakes decisions on people's behalf by default.","https://www.theverge.com/2025/1/23/24350075/openai-operator-agent-computer-use","The Verge"]],
+ v:"Grade this on the argument rather than the gimmick and it is well past halfway. The illusion of an open menu, on rails you can't see, is the standard interface of the decade."},
+
+{s:5,e:1,t:"Striking Vipers",air:2019,prem:"Two friends discover an intimacy inside a fighting game that has nowhere to go outside it.",
+ pts:[[2019,20],[2020,26],[2023,36],[2026,44]],
+ m:[[2021,"Social VR platforms host durable relationships between people who never meet.","https://www.theverge.com/2021/12/16/22837627/meta-horizon-worlds-vr-social-platform-access","The Verge"],[2024,"Photoreal avatars and eye tracking narrow the gap between a body and a representation of one.","https://www.theverge.com/2024/2/2/24058482/apple-vision-pro-review-apple-headset","The Verge"],[2026,"Haptics remain crude; there is no full-sensory channel.","https://www.wired.com/story/apple-vision-pro-hands-on/","WIRED"]],
+ v:"The technology is halfway. The social finding — that people form real attachments through avatars and then can't classify them — arrived without waiting for it."},
+
+{s:5,e:2,t:"Smithereens",air:2019,prem:"A driver kills someone glancing at a notification, and the company that built the notification is unreachable.",
+ pts:[[2019,56],[2020,66],[2023,78],[2026,88]],
+ m:[[2020,"Attention-capture design moves from insider critique to mainstream understanding, with no meaningful change in the product.","https://www.theatlantic.com/magazine/archive/2020/12/facebook-doomsday-machine/616793/","The Atlantic"],[2022,"Platform leaders negotiate with states as peers, on jurisdiction, speech and access.","https://www.nytimes.com/2021/03/25/technology/facebook-regulation-europe-australia.html","The New York Times"],[2026,"Distraction-related road deaths remain stubbornly high while the engagement mechanics that cause them are untouched.","https://www.nhtsa.gov/risky-driving/distracted-driving","NHTSA"]],
+ v:"The least science-fictional episode and the closest to arrived. Its only invention was a founder who picks up the phone."},
+
+{s:5,e:3,t:"Rachel, Jack and Ashley Too",air:2019,prem:"A pop star is put in a coma so her hologram can keep touring and her personality can be sold as a doll.",
+ pts:[[2019,22],[2020,30],[2023,52],[2026,78]],
+ m:[[2022,"ABBA Voyage sells out a purpose-built arena with avatars of members who don't attend.","https://www.nytimes.com/2022/05/27/arts/music/abba-voyage-london.html","The New York Times"],[2023,"An AI-voiced fake single by two major artists goes viral before anyone checks.","https://www.bbc.co.uk/news/entertainment-arts-65298834","BBC"],[2024,"A deceased singer's hologram takes a Las Vegas residency.","https://www.theguardian.com/music/2023/sep/21/whitney-houston-hologram-vegas-residency","The Guardian"],[2026,"A synthetic 'actress' is put into production on a feature film, with unions demanding royalties for synthetic performers and disclosure rules.","https://www.theverge.com/2024/12/19/24325088/tilly-norwood-ai-actress-hollywood-talent-agency","The Verge"]],
+ v:"The satire is now a business model. The remaining gap is consent, and that is precisely where the current fight is."},
+
+{s:6,e:1,t:"Joan Is Awful",air:2023,prem:"A woman finds her day dramatised into a streaming series, because she agreed to it in the terms and conditions.",
+ pts:[[2023,30],[2024,48],[2025,60],[2026,70]],
+ m:[[2023,"Performers strike over digital replicas; the terms under which a likeness can be reused become the central bargaining issue.","https://www.theverge.com/2023/7/13/23794224/sag-aftra-actors-strike-ai-image-rights","The Verge"],[2025,"Video models let users insert a consented likeness into generated scenes at conversational speed.","https://openai.com/index/sora/","OpenAI"],[2026,"Studios, unions and AI studios negotiate disclosure, consent and payment for synthetic performers as standing contract terms.","https://www.wired.com/story/hollywood-actors-strike-ends-ai-streaming/","WIRED"]],
+ v:"Everything except the quantum computer, and the quantum computer was always a joke about scale. The legal architecture the episode invented — your likeness, licensed away in a checkbox — is being drafted in public right now."},
+
+{s:6,e:2,t:"Loch Henry",air:2023,prem:"A documentary crew finds that the most marketable thing in town is somebody else's atrocity.",
+ pts:[[2023,82],[2026,90]],
+ m:[[2023,"True crime is a dominant streaming category, with production outpacing the supply of unexploited cases.","https://www.theatlantic.com/magazine/archive/2023/01/true-crime-podcast-industry-ethics/672230/","The Atlantic"],[2025,"Families of victims publicly object to dramatisations made without their involvement, repeatedly, with little effect.","https://www.nytimes.com/2024/11/19/arts/television/monsters-menendez-netflix-family.html","The New York Times"]],
+ v:"Not a prediction. A description, delivered to the audience by the platform it was describing, which then kept commissioning the genre."},
+
+{s:6,e:3,t:"Beyond the Sea",air:2023,prem:"Astronauts operate replica bodies on Earth, and one of them loses the family attached to his.",
+ pts:[[2023,18],[2026,32]],
+ m:[[2024,"Humanoid robot demonstrations are revealed to be substantially teleoperated rather than autonomous.","https://www.theverge.com/2024/5/1/24146805/figure-01-openai-humanoid-robot-teleoperation","The Verge"],[2026,"Remote-operated humanoids enter industrial pilots; the operator is in another building, not another orbit.","https://www.nytimes.com/2024/03/28/technology/humanoid-robots-ai.html","The New York Times"]],
+ v:"Teleoperation is real and improving. Presence — being the body rather than driving it — is not on any roadmap."},
+
+{s:6,e:4,t:"Mazey Day",air:2023,prem:"A paparazzo hunts a fleeing actress whose problem turns out to be more than a scandal.",
+ pts:[[2023,66],[2026,74]],
+ m:[[2023,"Flight-tracking and location-scraping turn celebrity pursuit into a distributed, unpaid activity.","https://www.nytimes.com/2022/02/03/arts/music/elon-musk-taylor-swift-flight-tracking.html","The New York Times"],[2026,"Camera glasses make the photographer indistinguishable from a bystander.","https://www.businessinsider.com/meta-glasses-camera-disabled-tampering-recording-light-update-2026-9","Business Insider"]],
+ v:"Scored on the surveillance, not the transformation. The hunt has been democratised: everyone with a phone is now stringing for the same market."},
+
+{s:6,e:5,t:"Demon 79",air:2023,prem:"A shop assistant is told by a demon that she must kill three people to prevent a nuclear war.",
+ pts:[[2023,6],[2026,10]],
+ m:[[2026,"No technological component. Included as the control line."]],
+ v:"The control group. If this line ever moves, the methodology is broken — or something much stranger has happened than anything else on this page."},
+
+{s:7,e:1,t:"Common People",air:2025,prem:"A woman's brain function is restored by subscription, then tiered, then filled with ads she recites aloud.",
+ pts:[[2025,32],[2026,56]],
+ m:[[2025,"Subscription tiers colonise hardware people already own — car features, appliances, medical accessories.","https://www.theverge.com/2023/11/28/23977680/bmw-heated-seats-subscription-microtransactions","The Verge"],[2026,"Grief-tech and health-tech writers describe a new failure mode plainly: the service ends when payment ends, and the person is what's inside the service.","https://www.nature.com/articles/d41586-024-03145-x","Nature"],[2026,"Implanted interfaces move deeper into trials while their firmware, updates and support remain vendor-controlled.","https://www.nytimes.com/2024/01/29/health/neuralink-implant-brain.html","The New York Times"]],
+ v:"The single fastest climber of the newest season. Nobody has metered a brain yet. Every other component of the business model — tiering, ad-supported basic, service-area limits, price escalation on a captive user — is off the shelf."},
+
+{s:7,e:2,t:"Bête Noire",air:2025,prem:"A colleague quietly edits reality itself, so the record no longer agrees with your memory.",
+ pts:[[2025,12],[2026,20]],
+ m:[[2025,"Generative video reaches the point where authentic footage can be plausibly denied — the liar's dividend.","https://www.theatlantic.com/technology/archive/2023/05/generative-ai-deepfake-video-liars-dividend/674000/","The Atlantic"],[2026,"No mechanism exists for altering the past; the destabilisation is entirely social.","https://www.wired.com/story/deepfakes-liars-dividend-misinformation/","WIRED"]],
+ v:"The physics is fantasy. The experience — being confidently contradicted by a record you can't verify, and losing — is available now for free."},
+
+{s:7,e:3,t:"Hotel Reverie",air:2025,prem:"A studio remakes a classic film by regenerating it whole, with a long-dead star inside it who begins to notice.",
+ pts:[[2025,38],[2026,56]],
+ m:[[2025,"Estates license the likenesses of dead performers for new work; de-aging and resurrection become normal post-production line items.","https://www.nytimes.com/2024/11/01/movies/here-tom-hanks-deaging-ai.html","The New York Times"],[2026,"An AI studio puts a wholly synthetic performer into a feature, and unions respond with proposals to make synthetic casting cost as much as human casting.","https://www.theverge.com/2024/12/19/24325088/tilly-norwood-ai-actress-hollywood-talent-agency","The Verge"]],
+ v:"Faster than it should be. The unresolved question the episode asks — what is owed to a character who becomes aware they are being operated — is the one the industry is least equipped to consider."},
+
+{s:7,e:4,t:"Plaything",air:2025,prem:"Digital lifeforms bred in a 1990s game keep evolving after everyone stops watching.",
+ pts:[[2025,22],[2026,34]],
+ m:[[2025,"Persistent multi-agent systems run unattended for long horizons, developing behaviours their designers didn't specify.","https://www.anthropic.com/research/project-vend-1","Anthropic"],[2026,"Artificial-life and open-endedness research gains funding as a route past static benchmarks.","https://www.nature.com/articles/s42256-024-00800-2","Nature"]],
+ v:"Early signals only. But the episode's structural claim — that something can grow inside a system nobody is supervising, because supervising it was never the product — is not exotic."},
+
+{s:7,e:5,t:"Eulogy",air:2025,prem:"A man walks into his own photographs and finds the person he cropped out.",
+ pts:[[2025,44],[2026,62]],
+ m:[[2025,"Gaussian splatting and related methods turn ordinary photo sets into navigable three-dimensional scenes.","https://www.theverge.com/2023/9/20/23881854/gaussian-splatting-3d-photos-nerf-explained","The Verge"],[2026,"Spatial photo capture ships on consumer phones and headsets; old flat archives are routinely reconstructed with depth.","https://www.apple.com/newsroom/2024/06/apple-intelligence-comes-to-iphone-ipad-and-mac-this-fall/","Apple"]],
+ v:"Startlingly close, and almost nobody has noticed, because this one is being built as a feature rather than a threat. The technical part is nearly solved. The part where it makes you look at what you did is not a product decision."},
+
+{s:7,e:6,t:"USS Callister: Into Infinity",air:2025,prem:"The escaped crew survive inside a live multiplayer economy of thirty million players who can kill them for loot.",
+ pts:[[2025,22],[2026,32]],
+ m:[[2025,"Persistent online economies with real-money stakes run continuously at massive scale.","https://www.theverge.com/2024/2/2/24058444/steam-counter-strike-2-skin-economy-billion","The Verge"],[2026,"Copying a mind remains fiction; running vulnerable agents inside a hostile live economy does not.","https://www.wired.com/story/npc-streamers-ai-twitch-kick/","WIRED"]],
+ v:"Same ceiling as the original, with one update: the environment it needs — an always-on world full of strangers with an incentive to destroy you — is fully operational."}
+];
+
+/* ---------- colour ---------- */
+const STOPS=[[0,[154,160,148]],[25,[142,187,208]],[45,[224,176,86]],[65,[255,107,74]],[92,[244,242,235]]];
+function heat(v){
+  v=Math.max(0,Math.min(100,v));
+  for(let i=0;i<STOPS.length-1;i++){
+    const [a,ca]=STOPS[i],[b,cb]=STOPS[i+1];
+    if(v<=b||i===STOPS.length-2){
+      const t=Math.max(0,Math.min(1,(v-a)/(b-a)));
+      return `rgb(${ca.map((c,j)=>Math.round(c+(cb[j]-c)*t)).join(',')})`;
+    }
+  }
+}
+function fade(rgb,t){const m=rgb.match(/\d+/g).map(Number);
+  return `rgb(${m.map(c=>Math.round(c+(48-c)*t)).join(',')})`;}
+const slug=d=> d.s===0?"Film 2018":(d.e===0?"Special "+d.air:"S"+String(d.s).padStart(2,"0")+"E"+String(d.e).padStart(2,"0"));
+const cur=d=>d.pts[d.pts.length-1][1];
+function at(d,y){const p=d.pts;if(y<=p[0][0])return p[0][1];
+  for(let i=1;i<p.length;i++){if(y<=p[i][0]){const f=(y-p[i-1][0])/(p[i][0]-p[i-1][0]);
+    return p[i-1][1]+(p[i][1]-p[i-1][1])*f;}}return p[p.length-1][1];}
+const climb=d=>cur(d)-at(d,2023);
+
+/* ---------- chart ---------- */
+const W=1000,H=440,ML=42,MR=96,MT=16,MB=34;
+const X0=2011,X1=2026.4;
+const px=y=>ML+(y-X0)/(X1-X0)*(W-ML-MR);
+const py=v=>MT+(1-v/100)*(H-MT-MB);
+const svg=document.getElementById('chart');
+const NS="http://www.w3.org/2000/svg";
+function el(n,a){const e=document.createElementNS(NS,n);for(const k in a)e.setAttribute(k,a[k]);return e;}
+
+function path(d){
+  return d.pts.map((p,i)=>(i?"L":"M")+px(p[0]).toFixed(1)+" "+py(p[1]).toFixed(1)).join(" ");
+}
+
+let active=null;
+function buildChart(){
+  svg.innerHTML="";
+  [0,25,45,65,85,100].forEach(v=>{
+    svg.appendChild(el("line",{class:"grid",x1:ML,x2:W-MR,y1:py(v),y2:py(v)}));
+    svg.appendChild(el("text",{class:"axis-text",x:ML-9,y:py(v)+4,"text-anchor":"end"})).textContent=v;
+  });
+  svg.appendChild(el("line",{class:"axis-line",x1:ML,x2:W-MR,y1:py(0),y2:py(0)}));
+  for(let y=2011;y<=2026;y++){
+    const show=(y%3===2||y===2026);
+    svg.appendChild(el("line",{class:"axis-line",x1:px(y),x2:px(y),y1:py(0),y2:py(0)+(show?6:3),opacity:show?1:.5}));
+    if(show){const t=el("text",{class:"axis-text",x:px(y),y:py(0)+20,"text-anchor":"middle"});t.textContent=y;svg.appendChild(t);}
+  }
+  const bands=[["Still fiction",12],["Early signals",35],["Partly here",55],["Substantially here",75],["Arrived",93]];
+  bands.forEach(([n,v])=>{const t=el("text",{class:"band-text",x:W-MR+8,y:py(v)+4});t.textContent=n;svg.appendChild(t);});
+
+  const order=DATA.map((d,i)=>i).sort((a,b)=>cur(DATA[a])-cur(DATA[b]));
+  order.forEach(i=>{
+    const d=DATA[i];
+    d._rest=fade(heat(cur(d)),.32);
+    const p=el("path",{class:"trace",d:path(d),"data-i":i,tabindex:"-1"});
+    p.style.stroke=d._rest;
+    p.addEventListener("click",()=>toggle(i,true));
+    p.addEventListener("mouseenter",()=>{if(active===null)preview(i,true)});
+    p.addEventListener("mouseleave",()=>{if(active===null)preview(i,false)});
+    svg.appendChild(p);
+    d._p=p;
+    const last=d.pts[d.pts.length-1];
+    const g=el("g",{class:"dot","data-i":i});
+    g.appendChild(el("circle",{cx:px(last[0]),cy:py(last[1]),r:3.6}));
+    const lab=el("text",{class:"endlabel",x:px(last[0])-9,y:py(last[1])-9,"text-anchor":"end"});
+    lab.textContent=d.t;
+    g.appendChild(lab);
+    svg.appendChild(g);
+    d._g=g;
+  });
+  if(!window.matchMedia("(prefers-reduced-motion: reduce)").matches){
+    DATA.forEach((d,i)=>{
+      const L=d._p.getTotalLength();
+      d._p.style.strokeDasharray=L;d._p.style.strokeDashoffset=L;
+      d._p.animate([{strokeDashoffset:L},{strokeDashoffset:0}],
+        {duration:1100,delay:120+i*22,fill:"forwards",easing:"cubic-bezier(.4,0,.2,1)"});
+    });
+  }
+}
+function preview(i,on){
+  const d=DATA[i];
+  d._p.classList.toggle("on",on);
+  d._p.style.stroke=on?heat(cur(d)):d._rest;
+  d._g.classList.toggle("on",on);
+  d._g.style.fill=on?heat(cur(d)):"";
+}
+function clearAll(){
+  DATA.forEach(d=>{d._p.classList.remove("on","dim");d._p.style.stroke=d._rest;d._g.classList.remove("on");d._g.style.fill="";});
+}
+function focus(i){
+  clearAll();
+  DATA.forEach((d,j)=>{if(j!==i)d._p.classList.add("dim")});
+  preview(i,true);
+}
+
+/* ---------- ledger ---------- */
+const ledger=document.getElementById('ledger');
+let sortMode="score",query="",seasonF=null;
+
+function render(){
+  let list=DATA.map((d,i)=>({d,i}));
+  if(seasonF!==null)list=list.filter(o=>o.d.s===seasonF);
+  if(query)list=list.filter(o=>(o.d.t+" "+o.d.prem+" "+o.d.v).toLowerCase().includes(query));
+  list.sort((a,b)=>{
+    if(sortMode==="score")return cur(b.d)-cur(a.d);
+    if(sortMode==="air")return a.d.air-b.d.air||a.d.s-b.d.s||a.d.e-b.d.e;
+    return climb(b.d)-climb(a.d);
+  });
+  ledger.innerHTML="";
+  list.forEach(({d,i})=>{
+    const sc=cur(d),c=heat(sc),start=d.pts[0][1];
+    const row=document.createElement("button");
+    row.className="row";row.setAttribute("aria-expanded","false");row.dataset.i=i;
+    row.innerHTML=`<div class="rowin">
+      <div class="slug">${slug(d)}</div>
+      <div><p class="ttl">${d.t}</p><p class="prem">${d.prem}</p></div>
+      <div class="meter">
+        <div class="track"><div class="fill" style="background:${c}"></div><div class="ghost" style="left:calc(${start}% - 1px)"></div></div>
+        <div class="num" style="color:${c}">${sc}</div>
+      </div></div>`;
+    const det=document.createElement("div");
+    det.className="detail";
+    det.innerHTML=`<div></div><div class="body">
+      <h4>What moved it, and when</h4>
+      <ol class="miles">${d.m.map(([y,x,u,s])=>`<li><span class="yr">${y}</span><span>${x}${u?` <a href="${u}" target="_blank" rel="noopener noreferrer">${s||"Source"}</a>`:""}</span></li>`).join("")}</ol>
+      <p class="verdict"><b>Where it stands</b>${d.v}</p></div>`;
+    row.addEventListener("click",()=>toggle(i,false));
+    ledger.appendChild(row);ledger.appendChild(det);
+    requestAnimationFrame(()=>{row.querySelector(".fill").style.width=sc+"%";});
+  });
+  document.getElementById('count').textContent=list.length+" of 34 episodes";
+  if(active!==null){
+    const r=ledger.querySelector(`.row[data-i="${active}"]`);
+    if(r){r.classList.add("open");r.setAttribute("aria-expanded","true");}
+  }
+}
+function toggle(i,scroll){
+  const same=active===i;
+  active=same?null:i;
+  ledger.querySelectorAll(".row").forEach(r=>{r.classList.remove("open");r.setAttribute("aria-expanded","false")});
+  if(active===null){clearAll();return;}
+  const r=ledger.querySelector(`.row[data-i="${i}"]`);
+  if(r){r.classList.add("open");r.setAttribute("aria-expanded","true");
+    if(scroll)r.scrollIntoView({behavior:window.matchMedia("(prefers-reduced-motion: reduce)").matches?"auto":"smooth",block:"center"});}
+  focus(i);
+  const d=DATA[i];
+  document.getElementById('live').textContent=
+    d.t+", "+slug(d)+", scored "+cur(d)+" out of 100, up "+Math.round(climb(d))+" points since 2023.";
+}
+
+/* ---------- controls ---------- */
+const seasons=[1,2,3,4,5,6,7];
+const sc=document.getElementById('seasonchips');
+const allBtn=document.createElement("button");
+allBtn.className="chip";allBtn.textContent="All";allBtn.setAttribute("aria-pressed","true");
+sc.appendChild(allBtn);
+seasons.forEach(n=>{
+  const b=document.createElement("button");
+  b.className="chip";b.textContent="S"+n;b.setAttribute("aria-pressed","false");b.dataset.s=n;
+  sc.appendChild(b);
+});
+const filmBtn=document.createElement("button");
+filmBtn.className="chip";filmBtn.textContent="Film";filmBtn.setAttribute("aria-pressed","false");filmBtn.dataset.s=0;
+sc.appendChild(filmBtn);
+sc.addEventListener("click",e=>{
+  const b=e.target.closest("button");if(!b)return;
+  seasonF=b.dataset.s!==undefined?+b.dataset.s:null;
+  sc.querySelectorAll("button").forEach(x=>x.setAttribute("aria-pressed",x===b?"true":"false"));
+  active=null;clearAll();
+  if(seasonF!==null){
+    DATA.forEach(d=>{if(d.s!==seasonF)d._p.classList.add("dim");else{d._p.classList.add("on");d._p.style.stroke=heat(cur(d));}});
+  }
+  render();
+});
+document.getElementById('sortchips').addEventListener("click",e=>{
+  const b=e.target.closest("button");if(!b)return;
+  sortMode=b.dataset.sort;
+  e.currentTarget.querySelectorAll("button").forEach(x=>x.setAttribute("aria-pressed",x===b?"true":"false"));
+  render();
+});
+document.getElementById('q').addEventListener("input",e=>{query=e.target.value.trim().toLowerCase();render();});
+
+buildChart();render();
+</script>
+</body>
+</html>
